@@ -1,4 +1,5 @@
 127.0.0.1   localhost
+127.0.0.1   example.localhost
 127.0.1.1   stretch.localdomain stretch
 
 # The following lines are desirable for IPv6 capable hosts
