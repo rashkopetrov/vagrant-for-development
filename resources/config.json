@@ -1,0 +1,75 @@
+{
+    "name"            : "Dev Sandbox V0.1",
+    "box"             : "debian/stretch64",
+    "hostname"        : "localhost",
+    "boot_timeout"    : 120,
+    "check_for_update": true,
+    "gui"             : false,
+    "ip"              : "192.168.10.10",
+    "memory"          : 2048,
+    "cpus"            : 1,
+
+    "ports": [
+        {
+            "host"        : 8080,
+            "guest"       : 80,
+            "protocol"    : "tcp",
+            "auto_correct": false
+        },
+        {
+            "host"        : 8443,
+            "guest"       : 443,
+            "protocol"    : "tcp",
+            "auto_correct": false
+        }
+    ],
+
+    "files": [
+        {
+            "host" : "~/.gitconfig",
+            "guest": "/home/vagrant/.gitconfig",
+            "sync" : "always"
+        },
+        {
+            "host"   : "./resources/hosts",
+            "guest"  : "/etc/hosts",
+            "sync"   : "always",
+            "options": {
+                "user" : "root",
+                "group": "root",
+                "mode" : 644
+            }
+        }
+    ],
+
+    "folders": [
+        {
+            "map"          : "./folders/htdocs",
+            "to"           : "/var/www/html",
+            "mount_options": ["dmode=774", "fmode=775"]
+        }
+    ],
+
+    "keys": [
+        "~/.ssh/id_rsa"
+    ],
+
+    "sites": [
+        {
+            "server_name": "localhost",
+            "server_root": {
+                "map"          : "./folders/htdocs",
+                "to"           : "/var/www/html",
+                "mount_options": ["dmode=774", "fmode=775"]
+            }
+        },
+        {
+            "server_name": "example.localhost",
+            "server_root": {
+                "map"          : "./folders/example.localhost",
+                "to"           : "/var/www/example.localhost",
+                "mount_options": ["dmode=774", "fmode=775"]
+            }
+        }
+    ]
+}
