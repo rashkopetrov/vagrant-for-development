@@ -27,6 +27,7 @@ class DevBoxPackages
       'installers/install-git.sh',
       'installers/install-mysql-8.sh',
       'installers/install-sqlite-3.sh',
+      'installers/install-redis.sh',
       'installers/install-nginx.sh',
       'installers/install-nodejs-10.sh',
       'installers/install-yarn.sh',
