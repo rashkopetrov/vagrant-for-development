@@ -15,6 +15,7 @@ apt-get -y --no-install-recommends install \
   ca-certificates \
   software-properties-common \
   apt-transport-https \
+  make \
   debconf \
   wget \
   curl \
