@@ -23,9 +23,9 @@ Description=MailHog service
 
 [Service]
 ExecStart=/usr/local/bin/mailhog \
-  -api-bind-addr 127.0.0.1:2025 \
-  -ui-bind-addr 127.0.0.1:2025 \
-  -smtp-bind-addr 127.0.0.1:2026
+  -api-bind-addr 127.0.0.1:3025 \
+  -ui-bind-addr 127.0.0.1:3025 \
+  -smtp-bind-addr 127.0.0.1:3026
 
 [Install]
 WantedBy=multi-user.target

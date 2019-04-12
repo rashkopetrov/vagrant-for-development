@@ -23,13 +23,13 @@
             "auto_correct": false
         },
         {
-            "host"        : 2025,
+            "host"        : 3025,
             "guest"       : 8025,
             "protocol"    : "tcp",
             "auto_correct": true
         },
         {
-            "host"        : 2026,
+            "host"        : 3026,
             "guest"       : 1025,
             "protocol"    : "tcp",
             "auto_correct": true

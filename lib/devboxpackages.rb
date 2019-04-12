@@ -30,6 +30,7 @@ class DevBoxPackages
       'installers/install-nodejs-10.sh',
       'installers/install-yarn.sh',
       'installers/install-php.sh',
+      'installers/install-phpunit-6.5.sh',
       'installers/install-php-composer.sh',
       'installers/install-vim.sh',
       'installers/install-zip-unzip.sh',
@@ -39,7 +40,7 @@ class DevBoxPackages
 
     scripts_to_run.each do |script|
       script_full_path = File.expand_path(DevBoxConf.vagrant_dir + '/scripts/' + script)
-      DevBoxScript.run_on_guest(script_full_path)
+      DevBoxScript.run_on_guest(script_full_path, nil, "always")
     end
   end
 end

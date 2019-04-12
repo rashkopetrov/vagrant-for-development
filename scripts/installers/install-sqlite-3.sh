@@ -3,7 +3,7 @@
 # Check If SQLite 3 Has Been Installed
 if [ -f /home/vagrant/.installed-sqlite3 ]
 then
-    echo "MySQL 8 already installed."
+    echo "SQLite 3 already installed."
     exit 0
 fi
 
