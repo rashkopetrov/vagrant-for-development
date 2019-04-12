@@ -23,6 +23,7 @@ class DevBoxPackages
   def self.install()
     scripts_to_run = [
       'installers/initial-setup.sh',
+      'installers/install-avahi.sh',
       'installers/install-git.sh',
       'installers/install-mysql-8.sh',
       'installers/install-sqlite-3.sh',
