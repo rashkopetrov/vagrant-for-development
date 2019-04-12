@@ -32,7 +32,9 @@ class DevBoxPackages
       'installers/install-php.sh',
       'installers/install-php-composer.sh',
       'installers/install-vim.sh',
-      'installers/install-zip-unzip.sh'
+      'installers/install-zip-unzip.sh',
+      'installers/install-go.sh',
+      'installers/install-mailhog.sh'
     ]
 
     scripts_to_run.each do |script|

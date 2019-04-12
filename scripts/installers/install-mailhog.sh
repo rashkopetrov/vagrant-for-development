@@ -9,7 +9,6 @@ fi
 
 touch /home/vagrant/.installed-mailhog
 
-apt-get -y install golang-go
 mkdir ~/gocode
 echo "export GOPATH=$HOME/gocode" >> ~/.profile
 source ~/.profile
