@@ -3,7 +3,6 @@
 SERVER_NAME=$1
 SERVER_ROOT=$2
 
-echo '<?php phpinfo();' > "$SERVER_ROOT/phpinfo.php"
 echo "
   server {
       listen 80;
