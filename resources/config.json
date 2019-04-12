@@ -21,6 +21,18 @@
             "guest"       : 443,
             "protocol"    : "tcp",
             "auto_correct": false
+        },
+        {
+            "host"        : 2025,
+            "guest"       : 8025,
+            "protocol"    : "tcp",
+            "auto_correct": true
+        },
+        {
+            "host"        : 2026,
+            "guest"       : 1025,
+            "protocol"    : "tcp",
+            "auto_correct": true
         }
     ],
 
