@@ -35,10 +35,10 @@ class DevBoxPackages
       'installers/install-php.sh',
       'installers/install-phpunit-6.5.sh',
       'installers/install-php-composer.sh',
-      'installers/install-xdebug.sh',
+      # 'installers/install-xdebug.sh',
       'installers/install-wp-cli.sh',
       'installers/install-vim.sh',
-      'installers/install-go.sh',
+      'installers/install-go.sh'
       # 'installers/install-mailhog.sh'
     ]
 
