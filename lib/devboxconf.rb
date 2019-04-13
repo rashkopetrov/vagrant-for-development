@@ -6,7 +6,7 @@ class DevBoxConf
     DevBoxConf.vagrant_dir = File.expand_path(Dir.pwd)
     DevBoxConf.home_dir    = File.expand_path("~")
 
-    settings_file = File.expand_path(DevBoxConf.vagrant_dir + '/resources/config.json')
+    settings_file = File.expand_path(DevBoxConf.vagrant_dir + '/config.json')
     if !File.exist? settings_file then
       abort "Config file not found"
     end

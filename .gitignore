@@ -1,3 +1,7 @@
 .vagrant
+
 /packages
 /shared
+
+config.json
+/config
