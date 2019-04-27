@@ -46,6 +46,8 @@
         {
             "map"          : "./synced/htdocs",
             "to"           : "/var/www/html",
+            "owner"        : "vagrant",
+            "group"        : "vagrant",
             "mount_options": ["dmode=774", "fmode=775"]
         }
     ],
@@ -60,7 +62,9 @@
             "server_root": {
                 "map"          : "./synced/htdocs",
                 "to"           : "/var/www/html",
-                "mount_options": ["dmode=774", "fmode=775"]
+                "owner"        : "www-data",
+                "group"        : "www-data",
+                "mount_options": ["dmode=755", "fmode=644"]
             }
         },
         {
@@ -68,7 +72,9 @@
             "server_root": {
                 "map"          : "./synced/example.localhost",
                 "to"           : "/var/www/example.localhost",
-                "mount_options": ["dmode=774", "fmode=775"]
+                "owner"        : "www-data",
+                "group"        : "www-data",
+                "mount_options": ["dmode=755", "fmode=644"]
             }
         }
     ]
