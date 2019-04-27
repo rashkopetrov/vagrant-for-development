@@ -23,9 +23,10 @@ Description=MailHog service
 
 [Service]
 ExecStart=/usr/local/bin/mailhog \
-  -api-bind-addr 127.0.0.1:3025 \
-  -ui-bind-addr 127.0.0.1:3025 \
-  -smtp-bind-addr 127.0.0.1:3026
+  -hostname 0.0.0.0 \
+  -api-bind-addr 0.0.0.0:8025 \
+  -ui-bind-addr 0.0.0.0:8025 \
+  -smtp-bind-addr 0.0.0.0:1025
 
 [Install]
 WantedBy=multi-user.target
@@ -33,3 +34,15 @@ WantedBy=multi-user.target
 
 systemctl start mailhog
 systemctl enable mailhog
+
+sed -i "s/relayhost =/#relayhost =/g" /etc/postfix/main.cf
+echo "
+# For MailHog
+myhostname = localhost
+relayhost = [localhost]:1025
+" >> /etc/postfix/main.cf
+
+service postfix stop
+service postfix start
+
+echo "Message Body" | mail -s "Message Subject" receiver@example.com

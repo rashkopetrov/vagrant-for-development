@@ -38,8 +38,9 @@ class DevBoxPackages
       # 'installers/install-xdebug.sh',
       'installers/install-wp-cli.sh',
       'installers/install-vim.sh',
-      'installers/install-go.sh'
-      # 'installers/install-mailhog.sh'
+      'installers/install-go.sh',
+      'installers/install-mailutils.sh',
+      'installers/install-mailhog.sh'
     ]
 
     scripts_to_run.each do |script|
