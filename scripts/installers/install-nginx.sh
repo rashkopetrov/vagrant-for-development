@@ -11,4 +11,6 @@ touch /home/vagrant/.installed-nginx
 
 usermod -a -G vagrant www-data
 apt-get -y --no-install-recommends install nginx
+rm -f /etc/nginx/sites-enabled/*
+rm -f /etc/nginx/sites-available/*
 service nginx start

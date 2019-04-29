@@ -58,7 +58,11 @@
 
     "sites": [
         {
-            "server_name": "localhost",
+            "http_port"  : 80,
+            "https_port" : 443,
+            "web_server" : "apache2",
+            "server_name": "apache.localhost",
+            "server_tpl" : "templates/apache2/default.tpl",
             "server_root": {
                 "map"          : "./synced/htdocs",
                 "to"           : "/var/www/html",
@@ -68,10 +72,14 @@
             }
         },
         {
-            "server_name": "example.localhost",
+            "http_port"  : 7080,
+            "https_port" : 7443,
+            "web_server" : "nginx",
+            "server_name": "nginx.localhost",
+            "server_tpl" : "templates/nginx/default.tpl",
             "server_root": {
-                "map"          : "./synced/example.localhost",
-                "to"           : "/var/www/example.localhost",
+                "map"          : "./synced/htdocs",
+                "to"           : "/var/www/html",
                 "owner"        : "www-data",
                 "group"        : "www-data",
                 "mount_options": ["dmode=755", "fmode=644"]
