@@ -27,6 +27,7 @@ class DevBoxPackages
       'installers/install-avahi.sh',
       'installers/install-git.sh',
       'installers/install-mysql-8.sh',
+      'installers/install-postgresql-9.sh',
       'installers/install-sqlite-3.sh',
       'installers/install-redis.sh',
       'installers/install-apache2.sh',
