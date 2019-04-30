@@ -20,4 +20,4 @@ sed -i "s|host    all             all             ::1/128                 md5|ho
 
 echo "listen_addresses='*'" >>/etc/postgresql/9.6/main/postgresql.conf
 
-sudo -u postgres psql -c "CREATE USER 'dbuser' WITH SUPERUSER PASSWORD 'toor';"
+sudo -u postgres psql -c "CREATE USER dbuser WITH SUPERUSER PASSWORD 'toor';"
