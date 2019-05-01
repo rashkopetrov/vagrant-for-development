@@ -42,6 +42,7 @@ class DevBoxPackages
       'installers/install-vim.sh',
       'installers/install-go.sh',
       'installers/install-mailutils.sh',
+      'installers/install-postfix.sh',
       'installers/install-mailhog.sh'
     ]
 
