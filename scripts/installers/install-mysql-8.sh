@@ -28,16 +28,27 @@ rm -rf /var/log/mysql
 rm -rf /etc/mysql
 
 # Add MySQL PPA
-wget -c https://dev.mysql.com/get/mysql-apt-config_0.8.12-1_all.deb
-dpkg -i mysql-apt-config_0.8.12-1_all.deb
+wget -c https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb
+dpkg -i mysql-apt-config_0.8.13-1_all.deb
 sed -i 's/mysql-5.7/mysql-8.0/g' /etc/apt/sources.list.d/mysql.list
-rm -rf mysql-apt-config_0.8.12-1_all.deb
+rm -rf mysql-apt-config_0.8.13-1_all.deb
 apt-key adv --keyserver keys.gnupg.net --recv-keys 8C718D3B5072E1F5
 
 # Set The Automated Root Password
 debconf-set-selections <<< "mysql-server mysql-server/data-dir select ''"
 debconf-set-selections <<< "mysql-server mysql-server/root_password password toor"
 debconf-set-selections <<< "mysql-server mysql-server/root_password_again password toor"
+
+# configuration fix found on
+# https://stackoverflow.com/questions/36979574/mysql-5-7-community-server-non-interactive-apt-install
+debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/repo-codename select stretch64'
+debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/repo-distro select debian'
+debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/repo-url string http://repo.mysql.com/apt/'
+debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-preview select '
+debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-product select Ok'
+debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-server select mysql-8.0'
+debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-tools select '
+debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/unsupported-platform select abort'
 
 apt-get -y update
 apt-get -y install mysql-server
