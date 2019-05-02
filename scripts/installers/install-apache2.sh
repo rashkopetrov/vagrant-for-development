@@ -34,3 +34,4 @@ sed -i "s|Listen 80|Listen 8880|g" /etc/apache2/ports.conf
 sed -i "s|Listen 443|#Listen 443|g" /etc/apache2/ports.conf
 
 service apache2 stop
+service apache2 start

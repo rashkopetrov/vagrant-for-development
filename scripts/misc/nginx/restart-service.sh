@@ -4,4 +4,5 @@
 
 echo "Restarting Nginx"
 
-nginx -s reload
+service nginx stop
+service nginx start

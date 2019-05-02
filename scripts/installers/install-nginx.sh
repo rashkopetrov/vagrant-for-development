@@ -19,3 +19,4 @@ rm -f /etc/nginx/sites-available/*
 sed -i "s|include \/etc\/nginx\/sites-enabled\/\*;|include \/etc\/nginx\/sites-enabled\/\*;\n\tserver {\n\t\tlisten 8881;\n\t\tserver_name localhost;\n\t}|g" /etc/nginx/nginx.conf
 
 service nginx stop
+service nginx start

@@ -4,4 +4,5 @@
 
 echo "Restarting Apache2"
 
-/etc/init.d/apache2 restart
+service apache2 stop
+service apache2 start
