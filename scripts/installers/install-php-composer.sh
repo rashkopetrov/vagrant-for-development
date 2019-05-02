@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing Composer"
+
 touch /home/vagrant/.installed-php-composer
 
 curl -sS https://getcomposer.org/installer | php

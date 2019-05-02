@@ -9,6 +9,8 @@ then
     exit 0
 fi
 
+echo "Installing Postfix"
+
 touch /home/vagrant/.installed-postfix
 
 apt-get -y install postfix

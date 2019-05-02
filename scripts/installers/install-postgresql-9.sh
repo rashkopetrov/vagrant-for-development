@@ -9,6 +9,8 @@ then
     exit 0
 fi
 
+echo "Installing PostgreSQL"
+
 touch /home/vagrant/.installed-postgresql
 
 apt-get -y install postgresql postgresql-contrib

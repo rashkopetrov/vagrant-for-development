@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing Redis"
+
 touch /home/vagrant/.installed-redis
 
 apt-get -y install redis-server

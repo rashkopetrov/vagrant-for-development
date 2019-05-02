@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing Zip/Unzip"
+
 touch /home/vagrant/.installed-zip-unzip
 
 apt-get -y --no-install-recommends install zip unzip

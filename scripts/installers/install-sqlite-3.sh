@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing SQLite 3"
+
 touch /home/vagrant/.installed-sqlite3
 
 apt-get -y install sqlite3

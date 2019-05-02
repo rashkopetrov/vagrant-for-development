@@ -9,6 +9,8 @@ then
     exit 0
 fi
 
+echo "Installing Xdebug"
+
 touch /home/vagrant/.installed-xdebug
 
 wget http://xdebug.org/files/xdebug-2.7.1.tgz

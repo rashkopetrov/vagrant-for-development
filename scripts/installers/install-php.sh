@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing PHP"
+
 touch /home/vagrant/.installed-php
 
 wget -q https://packages.sury.org/php/apt.gpg -O- | apt-key add -

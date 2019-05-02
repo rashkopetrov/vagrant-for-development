@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing Mailutils"
+
 touch /home/vagrant/.installed-mailutils
 
 apt-get -y install mailutils

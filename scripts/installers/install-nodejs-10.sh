@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing Node.js 10"
+
 touch /home/vagrant/.installed-nodejs10
 
 curl -sL https://deb.nodesource.com/setup_10.x | bash -

@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing PHPUnit"
+
 touch /home/vagrant/.installed-phpunit-6.5
 
 wget https://phar.phpunit.de/phpunit-6.5.phar

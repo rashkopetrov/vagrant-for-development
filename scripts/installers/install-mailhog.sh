@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing Mailhog"
+
 touch /home/vagrant/.installed-mailhog
 
 mkdir ~/gocode

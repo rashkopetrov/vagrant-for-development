@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing Go"
+
 touch /home/vagrant/.installed-go
 
 apt-get -y install golang-go

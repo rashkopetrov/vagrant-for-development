@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing Apache2"
+
 touch /home/vagrant/.installed-apache2
 
 usermod -a -G vagrant www-data
@@ -31,4 +33,4 @@ rm -f /etc/apache2/sites-available/*
 sed -i "s|Listen 80|Listen 8880|g" /etc/apache2/ports.conf
 sed -i "s|Listen 443|#Listen 443|g" /etc/apache2/ports.conf
 
-service apache2 restart
+service apache2 stop

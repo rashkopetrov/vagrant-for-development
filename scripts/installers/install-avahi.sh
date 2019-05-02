@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing Avahi"
+
 touch /home/vagrant/.installed-avahi
 
 apt-get -y install avahi-utils

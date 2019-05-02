@@ -9,6 +9,8 @@ then
     exit 0
 fi
 
+echo "Installing MySQL 8"
+
 touch /home/vagrant/.installed-mysql8
 
 # Disable Apparmor

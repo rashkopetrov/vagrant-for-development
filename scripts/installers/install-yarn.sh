@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing Yarn"
+
 touch /home/vagrant/.installed-yarn
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Creating Nginx site: $1"
+
 SERVER_NAME=$1
 SERVER_ROOT=$2
 HTTP_PORT=$3

@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing GIT"
+
 touch /home/vagrant/.installed-git
 
 apt-get -y --no-install-recommends install git

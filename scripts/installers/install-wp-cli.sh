@@ -7,6 +7,8 @@ then
     exit 0
 fi
 
+echo "Installing WP Cli"
+
 touch /home/vagrant/.installed-wp-cli
 
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
