@@ -43,7 +43,8 @@ class DevBoxPackages
       'installers/install-go.sh',
       'installers/install-mailutils.sh',
       'installers/install-postfix.sh',
-      'installers/install-mailhog.sh'
+      'installers/install-mailhog.sh',
+      'installers/install-nagios.sh'
     ]
 
     scripts_to_run.each do |script|

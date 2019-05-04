@@ -26,8 +26,13 @@ class DevBoxSites
 
   protected
   def self.configure_site(site_data)
-    server_root = site_data['server_root']
-    DevBoxFolders.sync_folder(server_root)
+    server_root      = site_data['server_root']
+    server_root_path = ''
+
+    if server_root != 'none'
+      server_root_path = server_root['to']
+      DevBoxFolders.sync_folder(server_root)
+    end
 
     web_server      = site_data['web_server']
     server_tpl      = site_data['server_tpl']
@@ -49,7 +54,7 @@ class DevBoxSites
     https_port       = site_data['https_port'] ||= 443
     script_full_path = File.expand_path(DevBoxConf.vagrant_dir + '/scripts/misc/' + web_server + '/create-site.sh')
     script_args      = [
-      server_name, server_root['to'], http_port, https_port
+      server_name, server_root['to'] || 'none' , http_port, https_port
     ]
 
     DevBoxScript.run_on_guest(script_full_path, script_args, "always")
@@ -83,7 +88,7 @@ class DevBoxSites
       abort 'Check your config file, Site server_root settings not specified.'
     end
 
-    if ! site_data['web_server']
+    if ! site_data['web_server'] && site_data['web_server']!='none'
       abort 'Check your config file, Site web_server not specified.'
     end
 

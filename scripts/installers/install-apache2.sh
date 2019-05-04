@@ -26,7 +26,8 @@ a2enmod proxy \
     rewrite \
     autoindex \
     negotiation \
-    setenvif
+    setenvif \
+    cgi
 rm -f /etc/apache2/sites-enabled/*
 rm -f /etc/apache2/sites-available/*
 

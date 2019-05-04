@@ -84,6 +84,14 @@
                 "group"        : "www-data",
                 "mount_options": ["dmode=755", "fmode=644"]
             }
+        },
+        {
+            "http_port"  : 80,
+            "https_port" : 443,
+            "web_server" : "apache2",
+            "server_name": "nagios.localhost",
+            "server_tpl" : "templates/apache2/nagios.tpl",
+            "server_root": "none"
         }
     ]
 }
