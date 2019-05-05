@@ -7,6 +7,7 @@ if [ -f /home/vagrant/.installed-nagios ]
 then
     echo "Nagios already installed."
     /etc/init.d/nagios start # todo: autostart with VM
+    service nagios-nrpe-server restart
     exit 0
 fi
 
@@ -73,3 +74,9 @@ htpasswd -b -c /usr/local/nagios/etc/htpasswd.users nagiosadmin password
 
 # a2enmod expires cgi
 # /etc/init.d/apache2 restart
+
+apt-get -y install nagios-plugins nagios-nrpe-server
+
+sed -i "s|/dev/hda1|/dev/sda1|g" /etc/nagios/nrpe.cfg
+
+service nagios-nrpe-server restart

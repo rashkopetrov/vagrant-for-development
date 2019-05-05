@@ -64,7 +64,7 @@ Listen {{HTTP_PORT}}
         </IfVersion>
     </Directory>
 
-    Alias /admin "/usr/local/nagios/share"
+    Alias /nagios "/usr/local/nagios/share"
 
     <Directory "/usr/local/nagios/share">
         # SSLRequireSSL
