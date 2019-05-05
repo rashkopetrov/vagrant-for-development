@@ -21,4 +21,4 @@ apt-get -y --no-install-recommends install libpng-dev
 apt-get -y --no-install-recommends install libgl1-mesa-dev
 
 # install bower
-sudo npm install -g bower
+npm install -g bower
