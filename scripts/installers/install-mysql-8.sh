@@ -52,8 +52,17 @@ debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-server sele
 debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/select-tools select '
 debconf-set-selections <<< 'mysql-apt-config mysql-apt-config/unsupported-platform select abort'
 
+debconf-set-selections <<< "mysql-community-server  mysql-community-server/re-root-pass password toor"
+debconf-set-selections <<< "mysql-community-server  mysql-community-server/root-pass    password toor"
+debconf-set-selections <<< "mysql-community-server  mysql-community-server/root-pass-mismatch   error   "
+debconf-set-selections <<< "mysql-community-server  mysql-server/default-auth-override  select  Use Strong Password Encryption (RECOMMENDED)"
+debconf-set-selections <<< "mysql-community-server  mysql-community-server/data-dir note    "
+debconf-set-selections <<< "mysql-community-server  mysql-community-server/remove-data-dir  boolean false"
+
 apt-get -y update
 apt-get -y install mysql-server
+
+mysql_secure_installation
 
 # Configure MySQL 8 Remote Access
 echo "bind-address = 0.0.0.0" | tee -a /etc/mysql/conf.d/mysql.cnf

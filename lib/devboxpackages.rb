@@ -42,10 +42,10 @@ class DevBoxPackages
       'installers/install-wp-cli.sh',
       'installers/install-vim.sh',
       'installers/install-go.sh',
+      # 'installers/install-nagios.sh',
       'installers/install-mailutils.sh',
       'installers/install-postfix.sh',
-      'installers/install-mailhog.sh',
-      'installers/install-nagios.sh'
+      'installers/install-mailhog.sh'
     ]
 
     scripts_to_run.each do |script|

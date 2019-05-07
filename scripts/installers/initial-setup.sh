@@ -17,6 +17,7 @@ apt-get -y --no-install-recommends install \
   apt-transport-https \
   make \
   debconf \
+  debconf-utils \
   wget \
   curl \
   gnupg \
