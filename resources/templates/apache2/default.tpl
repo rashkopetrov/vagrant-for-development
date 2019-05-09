@@ -17,7 +17,7 @@ Listen {{HTTP_PORT}}
     DirectoryIndex index.php index.html index.htm index.shtml
 
     <Directory "{{SERVER_ROOT}}">
-        Options FollowSymLinks
+        Options Indexes FollowSymLinks
         AllowOverride All
 
         Order allow,deny
