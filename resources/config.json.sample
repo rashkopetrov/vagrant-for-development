@@ -28,7 +28,13 @@
 
     "scripts": [
         "./resources/aliases",
-        "./synced/my-demo-script.sh",
+        {
+            "path": "./synced/my-demo-script.sh",
+            "args": [
+                "--arg=value",
+                "--arg2=value2"
+            ]
+        },
         "./synced/my-prod-script.sh"
     ],
 

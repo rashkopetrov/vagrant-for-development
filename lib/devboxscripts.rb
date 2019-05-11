@@ -11,14 +11,22 @@ class DevBoxScripts
       abort 'Check your config.json file, you have no scripts specified.'
     end
 
-    scripts.each do |script_path|
-      DevBoxScripts.run_script(script_path)
+    scripts.each do |script_data|
+      DevBoxScripts.run_script(script_data)
     end
   end
 
   protected
-  def self.run_script(script_path)
+  def self.run_script(script_data)
+    if script_data.is_a? String then
+      script_path = script_data
+      script_args = nil
+    else
+      script_path = script_data["path"]
+      script_args = script_data["args"]
+    end
+
     script_full_path = File.expand_path(script_path)
-    DevBoxScript.run_on_guest(script_full_path, nil, "always" )
+    DevBoxScript.run_on_guest(script_full_path, script_args, "always" )
   end
 end
