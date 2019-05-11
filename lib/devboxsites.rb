@@ -30,7 +30,7 @@ class DevBoxSites
     server_root_path = ''
 
     if server_root != 'none'
-      server_root_path = server_root['to']
+      server_root_path = server_root['guest_directory']
       DevBoxFolders.sync_folder(server_root)
     end
 
@@ -54,7 +54,7 @@ class DevBoxSites
     https_port       = site_data['https_port'] ||= 443
     script_full_path = File.expand_path(DevBoxConf.vagrant_dir + '/scripts/misc/' + web_server + '/create-site.sh')
     script_args      = [
-      server_name, server_root['to'] || 'none' , http_port, https_port
+      server_name, server_root['guest_directory'] || 'none' , http_port, https_port
     ]
 
     DevBoxScript.run_on_guest(script_full_path, script_args, "always")

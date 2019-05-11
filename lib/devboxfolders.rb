@@ -16,7 +16,7 @@ class DevBoxFolders
   end
 
   def self.sync_folder(folder_data)
-    if !File.exist? File.expand_path(folder_data['map'])
+    if !File.exist? File.expand_path(folder_data['host_directory'])
       DevBoxConf.config.vm.provision 'shell' do |s|
         s.inline = ">&2 echo \"Unable to mount one of your folders. Please check your folders in config.json\""
       end
@@ -40,11 +40,11 @@ class DevBoxFolders
     # Double-splat (**) operator only works with symbol keys, so convert
     options.keys.each{|k| options[k.to_sym] = options.delete(k) }
 
-    DevBoxConf.config.vm.synced_folder folder_data['map'], folder_data['to'], type: folder_data['type'] ||= nil, owner: folder_data['owner'] ||= 'vagrant', group: folder_data['type'] ||= 'vagrant', **options
+    DevBoxConf.config.vm.synced_folder folder_data['host_directory'], folder_data['guest_directory'], type: folder_data['type'] ||= nil, owner: folder_data['owner'] ||= 'vagrant', group: folder_data['type'] ||= 'vagrant', **options
 
     # Bindfs support to fix shared folder (NFS) permission issue on Mac
     if folder_data['type'] == 'nfs' && Vagrant.has_plugin?('vagrant-bindfs')
-      DevBoxConf.config.bindfs.bind_folder folder_data['to'], folder_data['to']
+      DevBoxConf.config.bindfs.bind_folder folder_data['guest_directory'], folder_data['guest_directory']
     end
   end
 end

@@ -44,11 +44,11 @@
 
     "folders": [
         {
-            "map"          : "./synced/htdocs",
-            "to"           : "/var/www/html",
-            "owner"        : "vagrant",
-            "group"        : "vagrant",
-            "mount_options": ["dmode=774", "fmode=775"]
+            "host_directory" : "./synced/htdocs",
+            "guest_directory": "/var/www/html",
+            "owner"          : "vagrant",
+            "group"          : "vagrant",
+            "mount_options"  : ["dmode=774", "fmode=775"]
         }
     ],
 
@@ -64,11 +64,11 @@
             "server_name": "apache.localhost",
             "server_tpl" : "templates/apache2/default.tpl",
             "server_root": {
-                "map"          : "./synced/htdocs",
-                "to"           : "/var/www/html",
-                "owner"        : "www-data",
-                "group"        : "www-data",
-                "mount_options": ["dmode=755", "fmode=644"]
+                "host_directory" : "./synced/htdocs",
+                "guest_directory": "/var/www/html",
+                "owner"          : "www-data",
+                "group"          : "www-data",
+                "mount_options"  : ["dmode=755", "fmode=644"]
             }
         },
         {
@@ -78,11 +78,11 @@
             "server_name": "nginx.localhost",
             "server_tpl" : "templates/nginx/default.tpl",
             "server_root": {
-                "map"          : "./synced/htdocs",
-                "to"           : "/var/www/html",
-                "owner"        : "www-data",
-                "group"        : "www-data",
-                "mount_options": ["dmode=755", "fmode=644"]
+                "host_directory" : "./synced/htdocs",
+                "guest_directory": "/var/www/html",
+                "owner"          : "www-data",
+                "group"          : "www-data",
+                "mount_options"  : ["dmode=755", "fmode=644"]
             }
         },
         {
