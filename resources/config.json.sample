@@ -27,6 +27,7 @@
     ],
 
     "scripts": [
+        "./resources/aliases",
         "./synced/my-demo-script.sh",
         "./synced/my-prod-script.sh"
     ],
