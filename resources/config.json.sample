@@ -70,7 +70,7 @@
             "https_port": 443,
             "web_server": "apache2",
             "server_name": "apache.localhost",
-            "server_tpl": "templates/apache2/default.tpl",
+            "server_tpl": "resources/templates/apache2/default.tpl",
             "server_root": {
                 "host_directory": "./synced/htdocs",
                 "guest_directory": "/var/www/html",
@@ -84,7 +84,7 @@
             "https_port": 7443,
             "web_server": "nginx",
             "server_name": "nginx.localhost",
-            "server_tpl": "templates/nginx/default.tpl",
+            "server_tpl": "resources/templates/nginx/default.tpl",
             "server_root": {
                 "host_directory": "./synced/htdocs",
                 "guest_directory": "/var/www/html",
@@ -98,7 +98,7 @@
             "https_port": 443,
             "web_server": "apache2",
             "server_name": "nagios.localhost",
-            "server_tpl": "templates/apache2/nagios.tpl",
+            "server_tpl": "resources/templates/apache2/nagios.tpl",
             "server_root": "none"
         }
     ]

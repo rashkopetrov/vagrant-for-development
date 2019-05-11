@@ -37,7 +37,7 @@ class DevBoxSites
     web_server      = site_data['web_server']
     server_tpl      = site_data['server_tpl']
     server_name     = site_data['server_name']
-    tpl_source      = File.expand_path(DevBoxConf.vagrant_dir + '/resources/' + server_tpl)
+    tpl_source      = File.expand_path(server_tpl)
     tpl_destination = '/etc/' + web_server + '/sites-available/' + server_name + '.conf';
     DevBoxFiles.sync_file({
         "host"   => tpl_source,
