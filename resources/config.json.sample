@@ -24,6 +24,11 @@
         }
     ],
 
+    "scripts": [
+        "./synced/my-demo-script.sh",
+        "./synced/my-prod-script.sh"
+    ],
+
     "files": [
         {
             "host" : "~/.gitconfig",

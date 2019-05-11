@@ -23,5 +23,8 @@ class DevBox
 
     require './lib/devboxsites.rb'
     DevBoxSites.init()
+
+    require './lib/devboxscripts.rb'
+    DevBoxScripts.init()
   end
 end
