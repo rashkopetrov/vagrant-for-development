@@ -1,25 +1,27 @@
 {
-    "name"            : "Dev Sandbox V0.1",
-    "box"             : "debian/stretch64",
-    "hostname"        : "localhost",
-    "boot_timeout"    : 120,
+    "name": "Dev Sandbox V0.1",
+    "box": "debian/stretch64",
+    "hostname": "localhost",
+    "boot_timeout": 120,
     "check_for_update": true,
-    "gui"             : false,
-    "ip"              : "192.168.10.10",
-    "memory"          : 2048,
-    "cpus"            : 1,
+    "gui": false,
+    "ip": "192.168.10.10",
+    "memory": 2048,
+    "cpus": 1,
+    "run_dpkg_installers_on": "provision",
+    "run_dpkg_autoupdate": "provision",
 
     "ports": [
         {
-            "host"        : 8080,
-            "guest"       : 80,
-            "protocol"    : "tcp",
+            "host": 8080,
+            "guest": 80,
+            "protocol": "tcp",
             "auto_correct": false
         },
         {
-            "host"        : 8443,
-            "guest"       : 443,
-            "protocol"    : "tcp",
+            "host": 8443,
+            "guest": 443,
+            "protocol": "tcp",
             "auto_correct": false
         }
     ],
@@ -31,29 +33,29 @@
 
     "files": [
         {
-            "host" : "~/.gitconfig",
+            "host": "~/.gitconfig",
             "guest": "/home/vagrant/.gitconfig",
-            "sync" : "always"
+            "sync": "always"
         },
         {
-            "host"   : "./resources/hosts",
-            "guest"  : "/etc/hosts",
-            "sync"   : "always",
+            "host": "./resources/hosts",
+            "guest": "/etc/hosts",
+            "sync": "always",
             "options": {
-                "user" : "root",
+                "user": "root",
                 "group": "root",
-                "mode" : 644
+                "mode": 644
             }
         }
     ],
 
     "folders": [
         {
-            "host_directory" : "./synced/htdocs",
+            "host_directory": "./synced/htdocs",
             "guest_directory": "/var/www/html",
-            "owner"          : "vagrant",
-            "group"          : "vagrant",
-            "mount_options"  : ["dmode=774", "fmode=775"]
+            "owner": "vagrant",
+            "group": "vagrant",
+            "mount_options": ["dmode=774", "fmode=775"]
         }
     ],
 
@@ -63,39 +65,39 @@
 
     "sites": [
         {
-            "http_port"  : 80,
-            "https_port" : 443,
-            "web_server" : "apache2",
+            "http_port": 80,
+            "https_port": 443,
+            "web_server": "apache2",
             "server_name": "apache.localhost",
-            "server_tpl" : "templates/apache2/default.tpl",
+            "server_tpl": "templates/apache2/default.tpl",
             "server_root": {
-                "host_directory" : "./synced/htdocs",
+                "host_directory": "./synced/htdocs",
                 "guest_directory": "/var/www/html",
-                "owner"          : "www-data",
-                "group"          : "www-data",
-                "mount_options"  : ["dmode=755", "fmode=644"]
+                "owner": "www-data",
+                "group": "www-data",
+                "mount_options": ["dmode=755", "fmode=644"]
             }
         },
         {
-            "http_port"  : 7080,
-            "https_port" : 7443,
-            "web_server" : "nginx",
+            "http_port": 7080,
+            "https_port": 7443,
+            "web_server": "nginx",
             "server_name": "nginx.localhost",
-            "server_tpl" : "templates/nginx/default.tpl",
+            "server_tpl": "templates/nginx/default.tpl",
             "server_root": {
-                "host_directory" : "./synced/htdocs",
+                "host_directory": "./synced/htdocs",
                 "guest_directory": "/var/www/html",
-                "owner"          : "www-data",
-                "group"          : "www-data",
-                "mount_options"  : ["dmode=755", "fmode=644"]
+                "owner": "www-data",
+                "group": "www-data",
+                "mount_options": ["dmode=755", "fmode=644"]
             }
         },
         {
-            "http_port"  : 80,
-            "https_port" : 443,
-            "web_server" : "apache2",
+            "http_port": 80,
+            "https_port": 443,
+            "web_server": "apache2",
             "server_name": "nagios.localhost",
-            "server_tpl" : "templates/apache2/nagios.tpl",
+            "server_tpl": "templates/apache2/nagios.tpl",
             "server_root": "none"
         }
     ]
