@@ -6,6 +6,22 @@
 - [Introduction](#introduction)
 - [Included Software](#included-software)
 - [Installation & Setup](#installation-and-setup)
+  - [Requirements](#requirements)
+  - [Installing](#installing)
+  - [Configuring](#configuring)
+    - [Setting Your VM](#setting-your-vm)
+    - [Executing Scripts](#executing-scripts)
+    - [Configuring Shared Folders](#configuring-shared-folders)
+    - [Copying SSH Keys To The Box](#copying-ssh-keys-to-the-box)
+    - [Copying Files To The Box](#copying-files-to-the-box)
+    - [Ports Forwarding](#ports-forwarding)
+    - [Ports Forwarding](#ports-forwarding)
+    - [Configuring The Sites](#configuring-the-sites)
+    - [Aliases](#aliases)
+    - [Credentials](#credentials)
+- [Usage](#usage)
+- [FAQ](#faq)
+
 
 <a name="introduction"></a>
 ## Introduction
@@ -53,11 +69,13 @@
 <a name="installation-and-setup"></a>
 ## Installation & Setup
 
+<a name="requirements"></a>
 ### Requirements
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
+<a name="installing"></a>
 ### Installing
 
 Clone the repository onto your host machine:
@@ -65,8 +83,10 @@ Clone the repository onto your host machine:
 
 Once you have cloned the repository, navigate to the DevBox directory `cd ~/DevBox` and run `bash ./init.sh`. The `config.json` file will be placed in the directory.
 
+<a name="configuring"></a>
 ### Configuring
 
+<a name="setting-your-vm"></a>
 #### Setting Your VM
 
 <table>
@@ -131,3 +151,36 @@ Once you have cloned the repository, navigate to the DevBox directory `cd ~/DevB
         <td>Whether to update/upgrade the packages on `vagrant up`. The available options are `boot` and `provision`.</td>
     </tr>
 </table>
+
+<a name="executing-scripts"></a>
+#### Executing Scripts
+
+<a name="configuring-shared-folders"></a>
+#### Configuring Shared Folders
+
+<a name="copying-ssh-keys-to-the-box"></a>
+#### Copying SSH Keys To The Box
+
+<a name="copying-files-to-the-box"></a>
+#### Copying Files To The Box
+
+<a name="ports-forwarding"></a>
+#### Ports Forwarding
+
+<a name="ports-forwarding"></a>
+#### Ports Forwarding
+
+<a name="configuring-the-sites"></a>
+#### Configuring The Sites
+
+<a name="aliases"></a>
+#### Aliases
+
+<a name="credentials"></a>
+#### Credentials
+
+<a name="usage"></a>
+## Usage
+
+<a name="faq"></a>
+## FAQ
