@@ -1,0 +1,33 @@
+{
+    "ports": [
+        {
+            "host": 8080,
+            "guest": 80,
+            "protocol": "tcp",
+            "auto_correct": false
+        },
+        {
+            "host": 8443,
+            "guest": 443,
+            "protocol": "tcp",
+            "auto_correct": false
+        }
+    ],
+
+    "sites": [
+        {
+            "http_port": 80,
+            "https_port": 443,
+            "web_server": "apache2",
+            "server_name": "localhost",
+            "server_tpl": "resources/templates/apache2/default.tpl",
+            "server_root": {
+                "host_directory": "./synced/htdocs",
+                "guest_directory": "/var/www/html",
+                "owner": "www-data",
+                "group": "www-data",
+                "mount_options": ["dmode=777", "fmode=777"]
+            }
+        }
+    ]
+}

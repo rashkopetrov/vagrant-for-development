@@ -10,14 +10,14 @@ class DevBoxPackages
 
   protected
   def self.update_upgrade()
-    run              = DevBoxConf.settings('run_dpkg_autoupdate') == "boot" ? "always" : "once"
+    run              = DevBoxConf.settings('run_dpkg_autoupdate', 'provision') == "boot" ? "always" : "once"
     script_full_path = File.expand_path(DevBoxConf.vagrant_dir + '/scripts/misc/update-upgrade.sh')
     DevBoxScript.run_on_guest(script_full_path, nil, run)
   end
 
   protected
   def self.autoremove()
-    run              = DevBoxConf.settings('run_dpkg_autoupdate') == "boot" ? "always" : "once"
+    run              = DevBoxConf.settings('run_dpkg_autoupdate', 'provision') == "boot" ? "always" : "once"
     script_full_path = File.expand_path(DevBoxConf.vagrant_dir + '/scripts/misc/autoremove.sh')
     DevBoxScript.run_on_guest(script_full_path, nil, run)
   end
@@ -51,7 +51,7 @@ class DevBoxPackages
       'installers/install-mailhog.sh'
     ]
 
-    run = DevBoxConf.settings('run_dpkg_installers_on') == "boot" ? "always" : "once"
+    run = DevBoxConf.settings('run_dpkg_installers_on', 'provision') == "boot" ? "always" : "once"
     scripts_to_run.each do |script|
       script_full_path = File.expand_path(DevBoxConf.vagrant_dir + '/scripts/' + script)
       DevBoxScript.run_on_guest(script_full_path, nil, run)
