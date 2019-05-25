@@ -113,7 +113,7 @@ Once you have cloned the repository, navigate to the DevBox directory `cd ~/DevB
     <tr>
         <td>memory</td>
         <td>2048</td>
-        <p>The memory the machine is allowed to use.</p>
+        <td>The memory the machine is allowed to use.</td>
     </tr>
     <tr>
         <td>cpus</td>
